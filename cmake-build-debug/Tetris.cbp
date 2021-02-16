@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Tetris"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/Work/GameDev/Tetris/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/Work/GameDev/Tetris/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tetris">
+				<Option output="E:/Work/GameDev/Tetris/cmake-build-debug/Tetris.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Work/GameDev/Tetris/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/Work/GameDev/Tetris/."/>
+					<Add directory="E:/Work/GameDev/Tetris/SDL2-2.0.12/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tetris"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tetris/fast">
+				<Option output="E:/Work/GameDev/Tetris/cmake-build-debug/Tetris.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Work/GameDev/Tetris/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/Work/GameDev/Tetris/."/>
+					<Add directory="E:/Work/GameDev/Tetris/SDL2-2.0.12/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tetris/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/Work/GameDev/Tetris/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;E:/Work/GameDev/Tetris/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/Work/GameDev/Tetris/Component.cpp">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/Component.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/Game.cpp">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/Game.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/GameObject.cpp">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/GameObject.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_assert.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_atomic.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_audio.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_bits.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_blendmode.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_clipboard.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config_android.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config_iphoneos.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config_macosx.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config_minimal.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config_pandora.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config_psp.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config_windows.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config_winrt.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_config_wiz.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_copying.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_cpuinfo.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_egl.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_endian.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_error.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_events.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_filesystem.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_gamecontroller.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_gesture.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_haptic.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_hints.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_joystick.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_keyboard.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_keycode.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_loadso.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_log.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_main.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_messagebox.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_metal.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_mouse.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_mutex.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_name.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_opengl.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_opengl_glext.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_opengles.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_opengles2.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_opengles2_gl2.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_opengles2_gl2ext.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_opengles2_gl2platform.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_opengles2_khrplatform.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_pixels.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_platform.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_power.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_quit.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_rect.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_render.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_revision.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_rwops.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_scancode.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_sensor.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_shape.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_stdinc.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_surface.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_system.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_syswm.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_assert.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_common.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_compare.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_crc32.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_font.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_fuzzer.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_harness.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_images.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_log.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_md5.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_memory.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_test_random.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_thread.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_timer.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_touch.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_types.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_version.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_video.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/SDL_vulkan.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/begin_code.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/SDL2-2.0.12/include/close_code.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/Transform.cpp">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/Transform.h">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/main.cpp">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

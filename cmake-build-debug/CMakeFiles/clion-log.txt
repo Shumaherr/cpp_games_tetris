@@ -1,0 +1,4 @@
+"J:\Programs\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" E:\Work\GameDev\Tetris
+-- Configuring done
+-- Generating done
+-- Build files have been written to: E:/Work/GameDev/Tetris/cmake-build-debug
