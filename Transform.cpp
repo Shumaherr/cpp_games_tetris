@@ -11,9 +11,11 @@ Transform::Transform() {
     scale = 1.0;
 }
 
-Transform::Transform(int x, int y, float rotation, float scale) {
+Transform::Transform(int x, int y, int height, int width, float rotation, float scale) {
     position.x = x;
     position.y = y;
+    this->height = height;
+    this->width = width;
     rotation = rotation;
     scale = scale;
 }
@@ -40,4 +42,8 @@ void Transform::setScale(float newScale) {
 
 float Transform::getScale() {
     return scale;
+}
+
+void Transform::Update(float deltaTime) {
+
 }

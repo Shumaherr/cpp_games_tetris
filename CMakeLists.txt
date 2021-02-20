@@ -95,5 +95,5 @@ add_executable(Tetris main.cpp GameObject.h GameObject.cpp Game.cpp Game.h Compo
         SDL2-2.0.12/include/SDL_types.h
         SDL2-2.0.12/include/SDL_version.h
         SDL2-2.0.12/include/SDL_video.h
-        SDL2-2.0.12/include/SDL_vulkan.h)
+        SDL2-2.0.12/include/SDL_vulkan.h Draw.cpp Draw.h)
 target_link_libraries(${PROJECT_NAME} SDL2main SDL2)

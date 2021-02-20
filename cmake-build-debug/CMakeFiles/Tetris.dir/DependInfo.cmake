@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "E:/Work/GameDev/Tetris/Component.cpp" "E:/Work/GameDev/Tetris/cmake-build-debug/CMakeFiles/Tetris.dir/Component.cpp.obj"
+  "E:/Work/GameDev/Tetris/Draw.cpp" "E:/Work/GameDev/Tetris/cmake-build-debug/CMakeFiles/Tetris.dir/Draw.cpp.obj"
   "E:/Work/GameDev/Tetris/Game.cpp" "E:/Work/GameDev/Tetris/cmake-build-debug/CMakeFiles/Tetris.dir/Game.cpp.obj"
   "E:/Work/GameDev/Tetris/GameObject.cpp" "E:/Work/GameDev/Tetris/cmake-build-debug/CMakeFiles/Tetris.dir/GameObject.cpp.obj"
   "E:/Work/GameDev/Tetris/Transform.cpp" "E:/Work/GameDev/Tetris/cmake-build-debug/CMakeFiles/Tetris.dir/Transform.cpp.obj"

@@ -19,3 +19,7 @@ void GameObject::Update(float deltaTime) {
     }
 
 }
+
+std::unordered_set<Component *> GameObject::GetComponents() {
+    return components;
+}

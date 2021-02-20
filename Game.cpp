@@ -4,6 +4,8 @@
 
 #include <SDL2-2.0.12/include/SDL.h>
 #include "Game.h"
+#include "Transform.h"
+#include "Draw.h"
 
 void Game::Init() {
     gameState = STATE_INIT;
@@ -18,7 +20,13 @@ void Game::Init() {
     renderer = SDL_CreateRenderer(window,
                                   -1,
                                   SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-
+    GameObject *field = new GameObject();
+    field->AddComponent(new Transform(50,50, 300, 100, 1,1));
+    SDL_Rect *background = new SDL_Rect({50, 50, 300, 100});
+    std::vector<SDL_Rect*> rects;
+    rects.push_back(background);
+    field->AddComponent(new Draw(new SDL_Color({24,24,24,255}), rects ));
+    gameObjects.push_back(*field);
 }
 
 Game::~Game() {
@@ -29,6 +37,24 @@ Game::~Game() {
 
 bool Game::isRunning() {
     return gameState != STATE_EXIT ? true : false;
+}
+
+void Game::Update() {
+
+}
+
+void Game::Render() {
+    for(auto gameObject : gameObjects)
+    {
+        for(auto component : gameObject.GetComponents())
+        {
+            component->DrawObject(renderer);
+        }
+    }
+}
+
+void Game::ProcessInput() {
+
 }
 
 

@@ -623,12 +623,26 @@ close_code.h
 ../SDL2-2.0.12/include/close_code.h
 
 E:/Work/GameDev/Tetris/Component.h
+SDL2-2.0.12/include/SDL_render.h
+-
+
+E:/Work/GameDev/Tetris/Draw.h
+Component.h
+E:/Work/GameDev/Tetris/Component.h
+SDL2-2.0.12/include/SDL.h
+-
+vector
+-
 
 E:/Work/GameDev/Tetris/Game.cpp
 SDL2-2.0.12/include/SDL.h
 -
 Game.h
 E:/Work/GameDev/Tetris/Game.h
+Transform.h
+E:/Work/GameDev/Tetris/Transform.h
+Draw.h
+E:/Work/GameDev/Tetris/Draw.h
 
 E:/Work/GameDev/Tetris/Game.h
 SDL_render.h
@@ -646,13 +660,7 @@ unordered_set
 Component.h
 E:/Work/GameDev/Tetris/Component.h
 
-E:/Work/GameDev/Tetris/main.cpp
-iostream
--
-SDL2-2.0.12/include/SDL_video.h
--
-SDL2-2.0.12/include/SDL_render.h
--
-Game.h
-E:/Work/GameDev/Tetris/Game.h
+E:/Work/GameDev/Tetris/Transform.h
+Component.h
+E:/Work/GameDev/Tetris/Component.h
 
