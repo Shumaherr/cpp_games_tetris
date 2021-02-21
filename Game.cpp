@@ -51,6 +51,7 @@ void Game::Render() {
             component->DrawObject(renderer);
         }
     }
+    SDL_RenderPresent(renderer);
 }
 
 void Game::ProcessInput() {
