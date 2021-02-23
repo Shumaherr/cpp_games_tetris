@@ -12,8 +12,8 @@
 
 class Draw: public Component {
 public:
-    Draw(SDL_Color* color, const std::vector<SDL_Rect *> rects) : color(color), rects(rects) {};
-    void DrawObject(SDL_Renderer* render ) override ;
+    Draw();
+    void DrawObject(SDL_Renderer* render) override ;
 
 private:
     SDL_Color *color;

@@ -3,6 +3,7 @@
 //
 
 #include <SDL2-2.0.12/include/SDL.h>
+#include <memory>
 #include "Game.h"
 #include "Transform.h"
 #include "Draw.h"
@@ -22,10 +23,10 @@ void Game::Init() {
                                   SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     GameObject *field = new GameObject();
     field->AddComponent(new Transform(50,50, 300, 100, 1,1));
-    SDL_Rect *background = new SDL_Rect({50, 50, 300, 100});
+    SDL_Rect *background = new SDL_Rect({50, 50, (int) (windowWidth * 0.6), (int) (windowHeight * 0.9)});
     std::vector<SDL_Rect*> rects;
     rects.push_back(background);
-    field->AddComponent(new Draw(new SDL_Color({24,24,24,255}), rects ));
+    field->AddComponent(new Draw());
     gameObjects.push_back(*field);
 }
 
@@ -33,6 +34,10 @@ Game::~Game() {
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
+    if(!gameObjects.empty())
+    {
+        std::vector<GameObject>().swap(gameObjects);
+    }
 }
 
 bool Game::isRunning() {
@@ -48,7 +53,7 @@ void Game::Render() {
     {
         for(auto component : gameObject.GetComponents())
         {
-            component->DrawObject(renderer);
+            component->DrawObject(renderer, gameObject.);
         }
     }
     SDL_RenderPresent(renderer);

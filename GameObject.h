@@ -9,6 +9,7 @@ class GameObject {
 
 public:
     void AddComponent(Component* component);
+    Component* GetComponent(Component* component);
     void RemoveComponent(Component* component);
     void Update(float deltaTime);
     std::unordered_set<Component*> GetComponents();
