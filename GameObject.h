@@ -4,16 +4,14 @@
 #pragma once
 #include <unordered_set>
 #include "Component.h"
+#include "Transform.h"
 
 class GameObject {
 
 public:
-    void AddComponent(Component* component);
-    Component* GetComponent(Component* component);
-    void RemoveComponent(Component* component);
-    void Update(float deltaTime);
-    std::unordered_set<Component*> GetComponents();
-private:
-    std::unordered_set<Component*> components;
+    virtual void Update(float deltaTime) = 0;
+    virtual void Draw(SDL_Renderer* renderer) = 0;
+    virtual void ProcessInput(const Uint8* state) = 0;
+    Transform transform;
 };
 

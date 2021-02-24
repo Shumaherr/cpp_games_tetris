@@ -7,6 +7,7 @@
 #include "Game.h"
 #include "Transform.h"
 #include "Draw.h"
+#include "Figure.h"
 
 void Game::Init() {
     gameState = STATE_INIT;
@@ -21,13 +22,14 @@ void Game::Init() {
     renderer = SDL_CreateRenderer(window,
                                   -1,
                                   SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    GameObject *field = new GameObject();
-    field->AddComponent(new Transform(50,50, 300, 100, 1,1));
     SDL_Rect *background = new SDL_Rect({50, 50, (int) (windowWidth * 0.6), (int) (windowHeight * 0.9)});
     std::vector<SDL_Rect*> rects;
     rects.push_back(background);
-    field->AddComponent(new Draw());
-    gameObjects.push_back(*field);
+    SDL_SetRenderDrawColor(renderer, 200,200,200,255);
+    SDL_RenderDrawRects(renderer, rects[0], rects.size());
+    SDL_RenderFillRects(renderer, rects[0], rects.size());
+    gameObjects.emplace_back(new Figure(Type::TYPE_S, new Vector2(50,150)));
+    mTicksCount = SDL_GetTicks();
 }
 
 Game::~Game() {
@@ -36,7 +38,7 @@ Game::~Game() {
     SDL_Quit();
     if(!gameObjects.empty())
     {
-        std::vector<GameObject>().swap(gameObjects);
+        std::vector<GameObject*>().swap(gameObjects);
     }
 }
 
@@ -45,22 +47,52 @@ bool Game::isRunning() {
 }
 
 void Game::Update() {
+    while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16))
+        ;
 
+    float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000.0f;
+    if (deltaTime > 0.05f)
+    {
+        deltaTime = 0.05f;
+    }
+    mTicksCount = SDL_GetTicks();
+    for(auto gameObject : gameObjects)
+    {
+        gameObject->Update(deltaTime);
+    }
 }
 
 void Game::Render() {
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
     for(auto gameObject : gameObjects)
     {
-        for(auto component : gameObject.GetComponents())
-        {
-            component->DrawObject(renderer, gameObject.);
-        }
+        gameObject->Draw(renderer);
     }
     SDL_RenderPresent(renderer);
 }
 
 void Game::ProcessInput() {
+    SDL_Event event;
+    while (SDL_PollEvent(&event))
+    {
+        switch (event.type)
+        {
+            case SDL_QUIT:
+                gameState = STATE_EXIT;
+                break;
+        }
+    }
 
+    const Uint8* state = SDL_GetKeyboardState(NULL);
+    if (state[SDL_SCANCODE_ESCAPE])
+    {
+        gameState = STATE_EXIT;
+    }
+    for(auto gameObject : gameObjects)
+    {
+        gameObject->ProcessInput(state);
+    }
 }
 
 

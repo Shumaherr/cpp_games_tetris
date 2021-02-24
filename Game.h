@@ -39,5 +39,6 @@ private:
     SDL_Window *window;
     long score;
     GameState gameState;
-    std::vector<GameObject> gameObjects;
+    std::vector<GameObject*> gameObjects;
+    Uint32 mTicksCount;
 };

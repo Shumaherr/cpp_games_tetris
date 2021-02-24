@@ -6,27 +6,12 @@
 #include <algorithm>
 #include "GameObject.h"
 
-void GameObject::AddComponent(Component* component) {
-    components.insert(component);
-}
-
-void GameObject::RemoveComponent(Component *component) {
-    components.erase(component);
-}
-
 void GameObject::Update(float deltaTime) {
-    for(auto component : components)
-    {
-        component->Update(deltaTime);
-    }
 
 }
 
-std::unordered_set<Component *> GameObject::GetComponents() {
-    return components;
+void GameObject::Draw(SDL_Renderer *renderer) {
+
 }
 
-Component* GameObject::GetComponent(Component* component) {
-    auto iter = std::find(components.begin(), components.end(), component);
-    return iter.operator*();
-}
+

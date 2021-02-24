@@ -20,10 +20,15 @@ enum class Type {
 class Figure : public GameObject {
 public:
     Figure();
-    Figure(Type type, Vector2 );
-    void Draw(SDL_Renderer* renderer);
+    Figure(Type type, Vector2* pos);
+    void Draw(SDL_Renderer* renderer) override ;
+    void Update(float deltaTime) override ;
+    void ProcessInput(const Uint8* state) override ;
 private:
     Type type;
+    float speed;
+    int dx;
+    bool isRotating;
 };
 
 
