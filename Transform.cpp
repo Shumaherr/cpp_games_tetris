@@ -24,7 +24,7 @@ void Transform::setPosition(Vector2 *newPos) {
     position = *newPos;
 }
 
-Vector2* Transform::getPosition() {
+Vector2 *Transform::getPosition() {
     return &position;
 }
 

@@ -22,15 +22,22 @@ public:
     Game() : windowHeight(800), windowWidth(600), title("Tetris") {};
 
     Game(int windowHeight, int windowWidth, const char *title) : windowHeight(windowHeight), windowWidth(windowWidth),
-                                                                title(title) {};
+                                                                 title(title) {};
+
     ~Game();
+
     void Init();
 
     void Update();
 
     void Render();
+
     void ProcessInput();
+
     bool isRunning();
+
+    int GetWindowHeight();
+    int GetWindowWidth();
 
 private:
     const char *title;

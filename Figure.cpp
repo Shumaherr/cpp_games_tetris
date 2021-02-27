@@ -78,30 +78,34 @@ void Figure::Draw(SDL_Renderer *renderer) {
     }
 }
 
-Figure::Figure(Type type, Vector2 *pos) {
+Figure::Figure(Type type, Vector2 *pos, Game* game) {
     this->type = type;
     this->transform.setPosition(pos);
+    this->game = game;
     speed = 100.0;
 }
 
 void Figure::Update(float deltaTime) {
     Vector2 *newPos = this->transform.getPosition();
+    //Check is figure fallen down
     newPos->y += speed * deltaTime;
-    if(dx!=0)
+    if (dx != 0)
         newPos->x += dx;
+    if(newPos->x < 50)
+        newPos->x = 50;
+    if(newPos->x > game->GetWindowWidth() + 50)
+        newPos->x = game->GetWindowWidth() + 50;
     transform.setPosition(newPos);
     dx = 0;
     delete newPos;
 }
 
-void Figure::ProcessInput(const Uint8* state) {
-    if (state[SDL_SCANCODE_D] || state[SDL_SCANCODE_RIGHT])
-    {
+void Figure::ProcessInput(const Uint8 *state) {
+    if (state[SDL_SCANCODE_D] || state[SDL_SCANCODE_RIGHT]) {
         dx = 1;
     }
-    if (state[SDL_SCANCODE_A] || state[SDL_SCANCODE_LEFT])
-    {
-       dx = -1;
+    if (state[SDL_SCANCODE_A] || state[SDL_SCANCODE_LEFT]) {
+        dx = -1;
     }
 
 }

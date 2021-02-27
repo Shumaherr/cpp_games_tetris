@@ -4,16 +4,16 @@
 #include "Game.h"
 
 Game *game;
+
 int main() {
     game = new Game();
     game->Init();
-    while (game->isRunning())
-    {
+    while (game->isRunning()) {
         game->ProcessInput();
         game->Update();
         game->Render();
     }
-    if(game)
+    if (game)
         delete game;
     std::cout << "Hello, World!" << std::endl;
     return 0;

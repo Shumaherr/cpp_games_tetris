@@ -5,24 +5,34 @@
 
 #include "Component.h"
 
-struct Vector2
-{
+struct Vector2 {
     float x, y;
 public:
-    Vector2() :x(0), y(0) {};
-    Vector2(int x, int y) :x(x), y(y) {};
+    Vector2() : x(0), y(0) {};
+
+    Vector2(int x, int y) : x(x), y(y) {};
 };
-class Transform: public Component {
+
+class Transform : public Component {
 public:
     Transform();
+
     Transform(int x, int y, int height, int width, float rotation, float scale);
-    void setPosition(Vector2* newPos);
-    Vector2* getPosition();
+
+    void setPosition(Vector2 *newPos);
+
+    Vector2 *getPosition();
+
     void setRotation(float newRotation);
+
     float getRotation();
+
     void setScale(float newScale);
+
     float getScale();
-    void Update(float deltaTime) override ;
+
+    void Update(float deltaTime) override;
+
 private:
     Vector2 position;
     int height, width;

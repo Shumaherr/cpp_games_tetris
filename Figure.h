@@ -17,13 +17,19 @@ enum class Type {
     TYPE_T,
     TYPE_Z
 };
+
 class Figure : public GameObject {
 public:
     Figure();
-    Figure(Type type, Vector2* pos);
-    void Draw(SDL_Renderer* renderer) override ;
-    void Update(float deltaTime) override ;
-    void ProcessInput(const Uint8* state) override ;
+
+    Figure(Type type, Vector2 *pos, Game* game);
+
+    void Draw(SDL_Renderer *renderer) override;
+
+    void Update(float deltaTime) override;
+
+    void ProcessInput(const Uint8 *state) override;
+
 private:
     Type type;
     float speed;
