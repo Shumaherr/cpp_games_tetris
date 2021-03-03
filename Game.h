@@ -6,7 +6,6 @@
 #include <SDL_render.h>
 #include <string>
 #include <vector>
-#include "GameObject.h"
 
 enum GameState {
     STATE_INIT,
@@ -16,7 +15,7 @@ enum GameState {
     STATE_GAME_OVER,
     STATE_EXIT
 };
-
+class GameObject;
 class Game {
 public:
     Game() : windowHeight(800), windowWidth(600), title("Tetris") {};
@@ -38,7 +37,7 @@ public:
 
     int GetWindowHeight();
     int GetWindowWidth();
-
+    int GetBlockSize();
 private:
     const char *title;
     int windowHeight, windowWidth;
@@ -48,4 +47,5 @@ private:
     GameState gameState;
     std::vector<GameObject*> gameObjects;
     Uint32 mTicksCount;
+    int blockSize;
 };

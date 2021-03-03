@@ -6,7 +6,6 @@
 #include <unordered_set>
 #include "Component.h"
 #include "Transform.h"
-#include "Game.h"
 
 class GameObject {
 

@@ -8,8 +8,10 @@
 #include "Transform.h"
 #include "Draw.h"
 #include "Figure.h"
+#define BLOCK_SIZE 10
 
 void Game::Init() {
+    blockSize = BLOCK_SIZE;
     gameState = STATE_INIT;
     window = SDL_CreateWindow(
             title,
@@ -22,13 +24,8 @@ void Game::Init() {
     renderer = SDL_CreateRenderer(window,
                                   -1,
                                   SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    SDL_Rect *background = new SDL_Rect({50, 50, (int) (windowWidth * 0.6), (int) (windowHeight * 0.9)});
-    std::vector<SDL_Rect *> rects;
-    rects.push_back(background);
-    SDL_SetRenderDrawColor(renderer, 200, 200, 200, 255);
-    SDL_RenderDrawRects(renderer, rects[0], rects.size());
-    SDL_RenderFillRects(renderer, rects[0], rects.size());
-    gameObjects.emplace_back(new Figure(Type::TYPE_S, new Vector2(50, 150), this));
+
+    gameObjects.emplace_back(new Figure(Type::TYPE_J, new Vector2(150, 50), this));
     mTicksCount = SDL_GetTicks();
 }
 
@@ -61,6 +58,12 @@ void Game::Update() {
 void Game::Render() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
+    SDL_Rect *background = new SDL_Rect({50, 50, (int) (windowWidth * 0.6), (int) (windowHeight * 0.9)});
+    std::vector<SDL_Rect *> rects;
+    rects.push_back(background);
+    SDL_SetRenderDrawColor(renderer, 200, 200, 200, 255);
+    SDL_RenderDrawRects(renderer, rects[0], rects.size());
+    SDL_RenderFillRects(renderer, rects[0], rects.size());
     for (auto gameObject : gameObjects) {
         gameObject->Draw(renderer);
     }
@@ -92,6 +95,10 @@ int Game::GetWindowHeight() {
 
 int Game::GetWindowWidth() {
     return windowWidth;
+}
+
+int Game::GetBlockSize() {
+    return blockSize;
 }
 
 

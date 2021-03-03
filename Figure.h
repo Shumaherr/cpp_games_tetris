@@ -1,12 +1,11 @@
 //
 // Created by Aleksandr on 22.02.2021.
 //
-
-#ifndef TETRIS_FIGURE_H
-#define TETRIS_FIGURE_H
+#pragma once
 
 #include "GameObject.h"
 #include "Transform.h"
+#include "Game.h"
 
 enum class Type {
     TYPE_I,
@@ -29,13 +28,14 @@ public:
     void Update(float deltaTime) override;
 
     void ProcessInput(const Uint8 *state) override;
+    float GetLeftX();
+    float GetRightX();
+    float GetBottomY();
 
 private:
     Type type;
     float speed;
     int dx;
     bool isRotating;
+    std::vector<Vector2> blocks;
 };
-
-
-#endif //TETRIS_FIGURE_H
