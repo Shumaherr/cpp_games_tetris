@@ -69,29 +69,28 @@ Figure::Figure(Type type, Vector2 *pos, Game* game) {
         case Type::TYPE_Z:
             break;
     }
-    speed = 100.0;
+    //speed = 100.0;
+    isRotating = false;
 }
 
 void Figure::Update(float deltaTime) {
     Vector2 *newPos = this->transform.getPosition();
-
     //Check is figure fallen down
     float oldX[4];
+    Vector2 oldPos[4];
     for (int i = 0; i < 4; i++)
     {
         blocks[i].y += speed * deltaTime;
-        oldX[i] = blocks[i].x;
+        oldPos[i] = blocks[i];
         if(dx != 0)
             blocks[i].x += 2 * dx;
     }
-    for(auto &block : blocks)
-    {
-
-    }
+    if (isRotating)
+        Rotate();
     if(!CheckConstraints())
         for (int i = 0; i < 4; i++)
         {
-            blocks[i].x = oldX[i];
+            blocks[i].x = oldPos[i].x;
         }
     transform.setPosition(newPos);
     dx = 0;
@@ -118,6 +117,7 @@ void Figure::Rotate()
         blocks[i].x = p.x - x;
         blocks[i].y = p.y + y;
     }
+    isRotating = false;
 }
 
 void Figure::ProcessInput(const Uint8 *state) {
@@ -128,7 +128,7 @@ void Figure::ProcessInput(const Uint8 *state) {
         dx = -1;
     }
     if (state[SDL_SCANCODE_W] || state[SDL_SCANCODE_UP]) {
-        Rotate(); //TODO Optimise. Stop rendering before figure is rotated
+        isRotating = true; //TODO Optimise. Stop rendering before figure is rotated
     }
 
 }
