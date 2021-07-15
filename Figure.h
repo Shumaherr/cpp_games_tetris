@@ -40,4 +40,6 @@ private:
     std::vector<Vector2> blocks;
 
     bool CheckConstraints();
+
+    void Rotate();
 };

@@ -108,12 +108,27 @@ bool Figure::CheckConstraints()
     return true;
 }
 
+void Figure::Rotate()
+{
+    Vector2 p = blocks[1];
+    for(int i = 0; i < 4; i++)
+    {
+        int x = blocks[i].y - p.y;
+        int y = blocks[i].x - p.x;
+        blocks[i].x = p.x - x;
+        blocks[i].y = p.y + y;
+    }
+}
+
 void Figure::ProcessInput(const Uint8 *state) {
     if (state[SDL_SCANCODE_D] || state[SDL_SCANCODE_RIGHT]) {
         dx = 1;
     }
     if (state[SDL_SCANCODE_A] || state[SDL_SCANCODE_LEFT]) {
         dx = -1;
+    }
+    if (state[SDL_SCANCODE_W] || state[SDL_SCANCODE_UP]) {
+        Rotate(); //TODO Optimise. Stop rendering before figure is rotated
     }
 
 }
