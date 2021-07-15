@@ -45,20 +45,20 @@ Figure::Figure(Type type, Vector2 *pos, Game* game) {
 
         case Type::TYPE_I:
             for (int i = 0; i < 4; i++) {
-                blocks.push_back(Vector2(transform.getPosition()->x, transform.getPosition()->y + i * 10));
+                blocks.push_back(Vector2(transform.getPosition()->x, transform.getPosition()->y + i * game->GetBlockSize()));
             }
             break;
         case Type::TYPE_J:
             for (int i = 0; i < 3; i++) {
-                blocks.push_back(Vector2(transform.getPosition()->x, transform.getPosition()->y + i * 10));
+                blocks.push_back(Vector2(transform.getPosition()->x, transform.getPosition()->y + i * game->GetBlockSize()));
             }
-            blocks.push_back(Vector2(transform.getPosition()->x - 10, transform.getPosition()->y + 2 * 10));
+            blocks.push_back(Vector2(transform.getPosition()->x - game->GetBlockSize(), transform.getPosition()->y + 2 * game->GetBlockSize()));
             break;
         case Type::TYPE_L:
             for (int i = 0; i < 3; i++) {
-                blocks.push_back(Vector2(transform.getPosition()->x, transform.getPosition()->y + i * 10));
+                blocks.push_back(Vector2(transform.getPosition()->x, transform.getPosition()->y + i * game->GetBlockSize()));
             }
-            blocks.push_back(Vector2(transform.getPosition()->x + 10, transform.getPosition()->y + 2 * 10));
+            blocks.push_back(Vector2(transform.getPosition()->x + game->GetBlockSize(), transform.getPosition()->y + 2 * game->GetBlockSize()));
             break;
         case Type::TYPE_O:
             break;
@@ -74,20 +74,38 @@ Figure::Figure(Type type, Vector2 *pos, Game* game) {
 
 void Figure::Update(float deltaTime) {
     Vector2 *newPos = this->transform.getPosition();
+
     //Check is figure fallen down
+    float oldX[4];
+    for (int i = 0; i < 4; i++)
+    {
+        blocks[i].y += speed * deltaTime;
+        oldX[i] = blocks[i].x;
+        if(dx != 0)
+            blocks[i].x += 2 * dx;
+    }
     for(auto &block : blocks)
     {
-        block.y += speed * deltaTime;
-        float oldX = block.x;
-        if(dx != 0)
-            block.x += 2 * dx;
-        if(GetLeftX() < 50 || GetRightX() > game->GetWindowWidth() * 0.6 + 50 - game->GetBlockSize())
-            block.x = oldX;
-    }
 
+    }
+    if(!CheckConstraints())
+        for (int i = 0; i < 4; i++)
+        {
+            blocks[i].x = oldX[i];
+        }
     transform.setPosition(newPos);
     dx = 0;
     delete newPos;
+}
+
+bool Figure::CheckConstraints()
+{
+    for(auto &block:blocks)
+    {
+        if(block.x < game->GetField()->x || block.x >= game->GetField()->x + game->GetField()->w - game->GetBlockSize() + 2)
+            return false;
+    }
+    return true;
 }
 
 void Figure::ProcessInput(const Uint8 *state) {
@@ -125,7 +143,7 @@ float Figure::GetBottomY() {
     for(auto &block : blocks)
     {
         if(block.y > max)
-            max = block.x;
+            max = block.y;
     }
     return max;
 }

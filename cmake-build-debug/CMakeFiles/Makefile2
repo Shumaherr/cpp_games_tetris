@@ -73,12 +73,12 @@ clean: CMakeFiles/Tetris.dir/clean
 CMakeFiles/Tetris.dir/all:
 	$(MAKE) -f CMakeFiles\Tetris.dir\build.make CMakeFiles/Tetris.dir/depend
 	$(MAKE) -f CMakeFiles\Tetris.dir\build.make CMakeFiles/Tetris.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\Work\GameDev\Tetris\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Tetris"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\Work\GameDev\Tetris\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Tetris"
 .PHONY : CMakeFiles/Tetris.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Tetris.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Work\GameDev\Tetris\cmake-build-debug\CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Work\GameDev\Tetris\cmake-build-debug\CMakeFiles 8
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Tetris.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\Work\GameDev\Tetris\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/Tetris.dir/rule

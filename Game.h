@@ -37,10 +37,12 @@ public:
 
     int GetWindowHeight();
     int GetWindowWidth();
+    SDL_Rect* GetField();
     int GetBlockSize();
 private:
     const char *title;
     int windowHeight, windowWidth;
+    SDL_Rect *fieldRect;
     SDL_Renderer *renderer;
     SDL_Window *window;
     long score;

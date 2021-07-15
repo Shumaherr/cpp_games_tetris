@@ -8,7 +8,7 @@
 #include "Transform.h"
 #include "Draw.h"
 #include "Figure.h"
-#define BLOCK_SIZE 10
+#define BLOCK_SIZE 20
 
 void Game::Init() {
     blockSize = BLOCK_SIZE;
@@ -25,7 +25,8 @@ void Game::Init() {
                                   -1,
                                   SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    gameObjects.emplace_back(new Figure(Type::TYPE_J, new Vector2(150, 50), this));
+    gameObjects.emplace_back(new Figure(Type::TYPE_L, new Vector2(150, 50), this));
+    fieldRect = new SDL_Rect({50, 50, (int) (windowWidth * 0.6), (int) (windowHeight * 0.9)});
     mTicksCount = SDL_GetTicks();
 }
 
@@ -58,9 +59,8 @@ void Game::Update() {
 void Game::Render() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-    SDL_Rect *background = new SDL_Rect({50, 50, (int) (windowWidth * 0.6), (int) (windowHeight * 0.9)});
     std::vector<SDL_Rect *> rects;
-    rects.push_back(background);
+    rects.push_back(fieldRect);
     SDL_SetRenderDrawColor(renderer, 200, 200, 200, 255);
     SDL_RenderDrawRects(renderer, rects[0], rects.size());
     SDL_RenderFillRects(renderer, rects[0], rects.size());
@@ -99,6 +99,10 @@ int Game::GetWindowWidth() {
 
 int Game::GetBlockSize() {
     return blockSize;
+}
+
+SDL_Rect* Game::GetField() {
+    return fieldRect;
 }
 
 

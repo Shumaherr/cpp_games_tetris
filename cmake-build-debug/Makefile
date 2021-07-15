@@ -176,6 +176,33 @@ Draw.cpp.s:
 	$(MAKE) -f CMakeFiles\Tetris.dir\build.make CMakeFiles/Tetris.dir/Draw.cpp.s
 .PHONY : Draw.cpp.s
 
+Figure.obj: Figure.cpp.obj
+
+.PHONY : Figure.obj
+
+# target to build an object file
+Figure.cpp.obj:
+	$(MAKE) -f CMakeFiles\Tetris.dir\build.make CMakeFiles/Tetris.dir/Figure.cpp.obj
+.PHONY : Figure.cpp.obj
+
+Figure.i: Figure.cpp.i
+
+.PHONY : Figure.i
+
+# target to preprocess a source file
+Figure.cpp.i:
+	$(MAKE) -f CMakeFiles\Tetris.dir\build.make CMakeFiles/Tetris.dir/Figure.cpp.i
+.PHONY : Figure.cpp.i
+
+Figure.s: Figure.cpp.s
+
+.PHONY : Figure.s
+
+# target to generate assembly for a file
+Figure.cpp.s:
+	$(MAKE) -f CMakeFiles\Tetris.dir\build.make CMakeFiles/Tetris.dir/Figure.cpp.s
+.PHONY : Figure.cpp.s
+
 Game.obj: Game.cpp.obj
 
 .PHONY : Game.obj
@@ -299,6 +326,9 @@ help:
 	@echo ... Draw.obj
 	@echo ... Draw.i
 	@echo ... Draw.s
+	@echo ... Figure.obj
+	@echo ... Figure.i
+	@echo ... Figure.s
 	@echo ... Game.obj
 	@echo ... Game.i
 	@echo ... Game.s

@@ -96,6 +96,12 @@
 		<Unit filename="E:/Work/GameDev/Tetris/Draw.h">
 			<Option target="Tetris"/>
 		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/Figure.cpp">
+			<Option target="Tetris"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/Tetris/Figure.h">
+			<Option target="Tetris"/>
+		</Unit>
 		<Unit filename="E:/Work/GameDev/Tetris/Game.cpp">
 			<Option target="Tetris"/>
 		</Unit>

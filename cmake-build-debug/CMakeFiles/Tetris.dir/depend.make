@@ -68,6 +68,60 @@ CMakeFiles/Tetris.dir/Draw.cpp.obj: ../Component.h
 CMakeFiles/Tetris.dir/Draw.cpp.obj: ../Draw.cpp
 CMakeFiles/Tetris.dir/Draw.cpp.obj: ../Draw.h
 
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_assert.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_atomic.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_audio.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_blendmode.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_clipboard.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_config.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_cpuinfo.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_endian.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_error.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_events.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_filesystem.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_gamecontroller.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_gesture.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_haptic.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_hints.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_joystick.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_keyboard.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_keycode.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_loadso.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_log.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_main.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_messagebox.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_metal.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_mouse.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_mutex.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_pixels.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_platform.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_power.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_quit.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_rect.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_render.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_rwops.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_scancode.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_sensor.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_shape.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_stdinc.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_surface.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_system.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_thread.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_timer.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_touch.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_version.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/SDL_video.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/begin_code.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../SDL2-2.0.12/include/close_code.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../Component.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../Draw.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../Figure.cpp
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../Figure.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../Game.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../GameObject.h
+CMakeFiles/Tetris.dir/Figure.cpp.obj: ../Transform.h
+
 CMakeFiles/Tetris.dir/Game.cpp.obj: ../SDL2-2.0.12/include/SDL.h
 CMakeFiles/Tetris.dir/Game.cpp.obj: ../SDL2-2.0.12/include/SDL_assert.h
 CMakeFiles/Tetris.dir/Game.cpp.obj: ../SDL2-2.0.12/include/SDL_atomic.h
@@ -116,6 +170,7 @@ CMakeFiles/Tetris.dir/Game.cpp.obj: ../SDL2-2.0.12/include/begin_code.h
 CMakeFiles/Tetris.dir/Game.cpp.obj: ../SDL2-2.0.12/include/close_code.h
 CMakeFiles/Tetris.dir/Game.cpp.obj: ../Component.h
 CMakeFiles/Tetris.dir/Game.cpp.obj: ../Draw.h
+CMakeFiles/Tetris.dir/Game.cpp.obj: ../Figure.h
 CMakeFiles/Tetris.dir/Game.cpp.obj: ../Game.cpp
 CMakeFiles/Tetris.dir/Game.cpp.obj: ../Game.h
 CMakeFiles/Tetris.dir/Game.cpp.obj: ../GameObject.h
@@ -138,6 +193,7 @@ CMakeFiles/Tetris.dir/GameObject.cpp.obj: ../SDL2-2.0.12/include/close_code.h
 CMakeFiles/Tetris.dir/GameObject.cpp.obj: ../Component.h
 CMakeFiles/Tetris.dir/GameObject.cpp.obj: ../GameObject.cpp
 CMakeFiles/Tetris.dir/GameObject.cpp.obj: ../GameObject.h
+CMakeFiles/Tetris.dir/GameObject.cpp.obj: ../Transform.h
 
 CMakeFiles/Tetris.dir/Transform.cpp.obj: ../SDL2-2.0.12/include/SDL_blendmode.h
 CMakeFiles/Tetris.dir/Transform.cpp.obj: ../SDL2-2.0.12/include/SDL_config.h
@@ -171,8 +227,6 @@ CMakeFiles/Tetris.dir/main.cpp.obj: ../SDL2-2.0.12/include/SDL_surface.h
 CMakeFiles/Tetris.dir/main.cpp.obj: ../SDL2-2.0.12/include/SDL_video.h
 CMakeFiles/Tetris.dir/main.cpp.obj: ../SDL2-2.0.12/include/begin_code.h
 CMakeFiles/Tetris.dir/main.cpp.obj: ../SDL2-2.0.12/include/close_code.h
-CMakeFiles/Tetris.dir/main.cpp.obj: ../Component.h
 CMakeFiles/Tetris.dir/main.cpp.obj: ../Game.h
-CMakeFiles/Tetris.dir/main.cpp.obj: ../GameObject.h
 CMakeFiles/Tetris.dir/main.cpp.obj: ../main.cpp
 
