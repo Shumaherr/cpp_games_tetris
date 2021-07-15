@@ -648,20 +648,6 @@ E:/Work/GameDev/Tetris/Transform.h
 Game.h
 E:/Work/GameDev/Tetris/Game.h
 
-E:/Work/GameDev/Tetris/Game.cpp
-SDL2-2.0.12/include/SDL.h
--
-memory
--
-Game.h
-E:/Work/GameDev/Tetris/Game.h
-Transform.h
-E:/Work/GameDev/Tetris/Transform.h
-Draw.h
-E:/Work/GameDev/Tetris/Draw.h
-Figure.h
-E:/Work/GameDev/Tetris/Figure.h
-
 E:/Work/GameDev/Tetris/Game.h
 SDL_render.h
 -

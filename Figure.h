@@ -38,8 +38,11 @@ private:
     int dx;
     bool isRotating;
     std::vector<Vector2> blocks;
+    bool isActive;
 
     bool CheckConstraints();
 
     void Rotate();
+
+    void CheckIsDown();
 };
