@@ -132,7 +132,6 @@ void Figure::Update(float deltaTime) {
     transform.setPosition(newPos);
     CheckIsDown();
     dx = 0;
-    delete newPos;
 }
 
 bool Figure::CheckConstraints() {
