@@ -65,12 +65,44 @@ Figure::Figure(Type type, Vector2 *pos, Game *game) {
                                      transform.getPosition()->y + 2 * game->GetBlockSize()));
             break;
         case Type::TYPE_O:
+            blocks.push_back(Vector2(transform.getPosition()->x + game->GetBlockSize(),
+                                     transform.getPosition()->y + game->GetBlockSize()));
+            blocks.push_back(Vector2(transform.getPosition()->x + game->GetBlockSize(),
+                                     transform.getPosition()->y + 2 * game->GetBlockSize()));
+            blocks.push_back(Vector2(transform.getPosition()->x + 2 * game->GetBlockSize(),
+                                     transform.getPosition()->y + game->GetBlockSize()));
+            blocks.push_back(Vector2(transform.getPosition()->x + 2 * game->GetBlockSize(),
+                                     transform.getPosition()->y + 2 * game->GetBlockSize()));
             break;
         case Type::TYPE_S:
+            blocks.push_back(Vector2(transform.getPosition()->x + game->GetBlockSize(),
+                                     transform.getPosition()->y + game->GetBlockSize()));
+            blocks.push_back(Vector2(transform.getPosition()->x + 2 * game->GetBlockSize(),
+                                     transform.getPosition()->y + game->GetBlockSize()));
+            blocks.push_back(Vector2(transform.getPosition()->x + game->GetBlockSize(),
+                                     transform.getPosition()->y + 2 * game->GetBlockSize()));
+            blocks.push_back(Vector2(transform.getPosition()->x,
+                                     transform.getPosition()->y + 2 * game->GetBlockSize()));
             break;
         case Type::TYPE_T:
+            blocks.push_back(Vector2(transform.getPosition()->x,
+                                     transform.getPosition()->y));
+            blocks.push_back(Vector2(transform.getPosition()->x + game->GetBlockSize(),
+                                     transform.getPosition()->y));
+            blocks.push_back(Vector2(transform.getPosition()->x + 2 * game->GetBlockSize(),
+                                     transform.getPosition()->y));
+            blocks.push_back(Vector2(transform.getPosition()->x + game->GetBlockSize(),
+                                     transform.getPosition()->y - game->GetBlockSize()));
             break;
         case Type::TYPE_Z:
+            blocks.push_back(Vector2(transform.getPosition()->x,
+                                     transform.getPosition()->y));
+            blocks.push_back(Vector2(transform.getPosition()->x + game->GetBlockSize(),
+                                     transform.getPosition()->y));
+            blocks.push_back(Vector2(transform.getPosition()->x + game->GetBlockSize(),
+                                     transform.getPosition()->y + game->GetBlockSize()));
+            blocks.push_back(Vector2(transform.getPosition()->x + 2 * game->GetBlockSize(),
+                                     transform.getPosition()->y + game->GetBlockSize()));
             break;
     }
     speed = 100.0;
@@ -117,6 +149,7 @@ void Figure::CheckIsDown() {
         if (block.y >= game->GetField()->y + game->GetField()->h - game->GetBlockSize()) {
             block.y = game->GetField()->y + game->GetField()->h - game->GetBlockSize();
             isActive = false;
+            game->DropNewFigure();
         }
 
     }

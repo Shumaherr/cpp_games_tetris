@@ -7,14 +7,15 @@
 #include "Transform.h"
 #include "Game.h"
 
-enum class Type {
+enum Type {
     TYPE_I,
     TYPE_J,
     TYPE_L,
     TYPE_O,
     TYPE_S,
     TYPE_T,
-    TYPE_Z
+    TYPE_Z,
+    last
 };
 
 class Figure : public GameObject {
@@ -28,6 +29,8 @@ public:
     void Update(float deltaTime) override;
 
     void ProcessInput(const Uint8 *state) override;
+
+    bool IsActive() {return isActive;};
     float GetLeftX();
     float GetRightX();
     float GetBottomY();

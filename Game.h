@@ -39,6 +39,7 @@ public:
     int GetWindowWidth();
     SDL_Rect* GetField();
     int GetBlockSize();
+    void DropNewFigure();
 private:
     const char *title;
     int windowHeight, windowWidth;

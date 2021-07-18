@@ -25,7 +25,7 @@ void Game::Init() {
                                   -1,
                                   SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    gameObjects.emplace_back(new Figure(Type::TYPE_L, new Vector2(150, 50), this));
+    DropNewFigure();
     fieldRect = new SDL_Rect({50, 50, (int) (windowWidth * 0.6), (int) (windowHeight * 0.9)});
     mTicksCount = SDL_GetTicks();
 }
@@ -87,6 +87,12 @@ void Game::ProcessInput() {
     for (auto gameObject : gameObjects) {
         gameObject->ProcessInput(state);
     }
+}
+
+void Game::DropNewFigure()
+{
+    gameObjects.emplace_back(new Figure(static_cast<Type>(rand() % last), new Vector2(150, 50), this));
+    //gameObjects.emplace_back(new Figure(Type::TYPE_Z, new Vector2(150, 50), this));
 }
 
 int Game::GetWindowHeight() {
