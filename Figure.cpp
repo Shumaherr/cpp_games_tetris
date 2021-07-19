@@ -121,7 +121,7 @@ void Figure::Update(float deltaTime) {
         blocks[i].y += speed * deltaTime;
         oldPos[i] = blocks[i];
         if (dx != 0)
-            blocks[i].x += 2 * dx;
+            blocks[i].x += game->GetBlockSize() * dx;
     }
     if (isRotating)
         Rotate();
@@ -149,6 +149,7 @@ void Figure::CheckIsDown() {
             block.y = game->GetField()->y + game->GetField()->h - game->GetBlockSize();
             isActive = false;
             game->DropNewFigure();
+            return;
         }
 
     }
