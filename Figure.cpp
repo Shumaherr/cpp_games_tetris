@@ -113,6 +113,10 @@ Figure::Figure(Type type, Vector2 *pos, Game *game) {
 void Figure::Update(float deltaTime) {
     if (!isActive)
         return;
+    if(isRotating)
+    {
+
+    }
     Vector2 *newPos = this->transform.getPosition();
     //Check is figure fallen down
     float oldX[4];
@@ -123,36 +127,44 @@ void Figure::Update(float deltaTime) {
         if (dx != 0)
             blocks[i].x += game->GetBlockSize() * dx;
     }
-    if (isRotating)
-        Rotate();
     if (!CheckConstraints())
         for (int i = 0; i < 4; i++) {
             blocks[i].x = oldPos[i].x;
         }
     transform.setPosition(newPos);
-    CheckIsDown();
+    CheckFallen();
     dx = 0;
 }
 
 bool Figure::CheckConstraints() {
     for (auto &block:blocks) {
-        if (block.x < game->GetField()->x ||
-            block.x >= game->GetField()->x + game->GetField()->w - game->GetBlockSize() + 2)
+        if (block.x < game->GetFieldRect()->x ||
+            block.x >= game->GetFieldRect()->x + game->GetFieldRect()->w - game->GetBlockSize() + 2)
             return false;
     }
     return true;
 }
 
-void Figure::CheckIsDown() {
+void Figure::CheckFallen()
+{
+    if(CheckIsDown() || game->CheckFigureBottom(this))
+    {
+        isActive = false;
+        game->PutFigure(this);
+        game->DropNewFigure();
+    }
+}
+
+bool Figure::CheckIsDown() {
     for (auto &block:blocks) {
-        if (block.y >= game->GetField()->y + game->GetField()->h - game->GetBlockSize()) {
-            block.y = game->GetField()->y + game->GetField()->h - game->GetBlockSize();
-            isActive = false;
-            game->DropNewFigure();
-            return;
+        if (block.y >= game->GetFieldRect()->y + game->GetFieldRect()->h - game->GetBlockSize()) {
+            block.y = game->GetFieldRect()->y + game->GetFieldRect()->h - game->GetBlockSize();
+
+            return true;
         }
 
     }
+    return false;
 }
 
 void Figure::Rotate() {

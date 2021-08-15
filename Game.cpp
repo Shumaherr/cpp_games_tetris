@@ -2,8 +2,9 @@
 // Created by Aleksandr on 14.02.2021.
 //
 
-#include <SDL2-2.0.12/include/SDL.h>
+#include <SDL.h>
 #include <memory>
+#include <iostream>
 #include "Game.h"
 #include "Transform.h"
 #include "Draw.h"
@@ -31,6 +32,7 @@ void Game::Init() {
 }
 
 Game::~Game() {
+    delete(fieldRect);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
@@ -107,8 +109,35 @@ int Game::GetBlockSize() {
     return blockSize;
 }
 
-SDL_Rect* Game::GetField() {
+SDL_Rect* Game::GetFieldRect() {
     return fieldRect;
 }
+
+bool Game::CheckFigureBottom(Figure* figure)
+{
+    if(blocks.empty())
+        return false;
+    for(auto figBlock:figure->GetBlocks())
+    {
+        for (auto &block:blocks) {
+            if(block->x != figBlock.x)
+                continue;
+            if(figBlock.y >= block->y)
+                return true;
+        }
+    }
+    return false;
+
+}
+
+void Game::PutFigure(Figure *figure) {
+    if(!figure)
+        return;
+    figures.push_back(figure);
+    for (auto &block: figure->GetBlocks()) {
+        blocks.push_back(&block);
+    }
+}
+
 
 

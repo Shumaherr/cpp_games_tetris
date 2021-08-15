@@ -7,7 +7,7 @@
 
 
 #include "Component.h"
-#include <SDL2-2.0.12/include/SDL.h>
+#include <SDL.h>
 #include <vector>
 
 class Draw: public Component {

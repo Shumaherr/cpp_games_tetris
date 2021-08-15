@@ -6,6 +6,9 @@
 #include <SDL_render.h>
 #include <string>
 #include <vector>
+#include <map>
+#include "Transform.h"
+#include "Figure.h"
 
 enum GameState {
     STATE_INIT,
@@ -16,6 +19,7 @@ enum GameState {
     STATE_EXIT
 };
 class GameObject;
+class Figure;
 class Game {
 public:
     Game() : windowHeight(800), windowWidth(600), title("Tetris") {};
@@ -37,9 +41,11 @@ public:
 
     int GetWindowHeight();
     int GetWindowWidth();
-    SDL_Rect* GetField();
+    SDL_Rect* GetFieldRect();
     int GetBlockSize();
     void DropNewFigure();
+    void PutFigure(Figure* figure);
+    bool CheckFigureBottom(Figure* figure);
 private:
     const char *title;
     int windowHeight, windowWidth;
@@ -49,6 +55,9 @@ private:
     long score;
     GameState gameState;
     std::vector<GameObject*> gameObjects;
+    std::vector<Figure*> figures;
+    std::vector<Vector2*> blocks;
     Uint32 mTicksCount;
     int blockSize;
+
 };

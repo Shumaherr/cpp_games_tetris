@@ -1,5 +1,4 @@
 #include <iostream>
-#include <SDL2-2.0.12/include/SDL_video.h>
 #include "Game.h"
 
 Game *game;
