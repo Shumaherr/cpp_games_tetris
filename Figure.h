@@ -31,7 +31,7 @@ public:
     void ProcessInput(const Uint8 *state) override;
 
     bool IsActive() {return isActive;};
-    std::vector<Vector2> GetBlocks() {return blocks;};
+    std::vector<Vector2> *GetBlocks() {return &blocks;};
     float GetLeftX();
     float GetRightX();
     float GetBottomY();

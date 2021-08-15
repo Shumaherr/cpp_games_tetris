@@ -117,12 +117,12 @@ bool Game::CheckFigureBottom(Figure* figure)
 {
     if(blocks.empty())
         return false;
-    for(auto figBlock:figure->GetBlocks())
+    for(auto figBlock:*figure->GetBlocks())
     {
-        for (auto &block:blocks) {
+        for (auto block:blocks) {
             if(block->x != figBlock.x)
                 continue;
-            if(figBlock.y >= block->y)
+            if(figBlock.y + blockSize >= block->y)
                 return true;
         }
     }
@@ -134,7 +134,7 @@ void Game::PutFigure(Figure *figure) {
     if(!figure)
         return;
     figures.push_back(figure);
-    for (auto &block: figure->GetBlocks()) {
+    for (auto &block: *figure->GetBlocks()) {
         blocks.push_back(&block);
     }
 }

@@ -32,7 +32,7 @@ void Figure::Draw(SDL_Renderer *renderer) {
     }
     for (auto block : blocks) {
         SDL_RenderDrawRectF(renderer, new SDL_FRect(
-                {block.x, block.y, (float) game->GetBlockSize(), (float) game->GetBlockSize()}));
+                {(float)block.x, (float)block.y, (float) game->GetBlockSize(), (float) game->GetBlockSize()}));
     }
 }
 
@@ -115,7 +115,8 @@ void Figure::Update(float deltaTime) {
         return;
     if(isRotating)
     {
-
+        Rotate();
+        return;
     }
     Vector2 *newPos = this->transform.getPosition();
     //Check is figure fallen down

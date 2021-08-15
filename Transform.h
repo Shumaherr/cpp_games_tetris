@@ -6,7 +6,7 @@
 #include "Component.h"
 
 struct Vector2 {
-    float x, y;
+    int x, y;
 public:
     Vector2() : x(0), y(0) {};
 
