@@ -45,7 +45,7 @@ public:
     int GetBlockSize();
     void DropNewFigure();
     void PutFigure(Figure* figure);
-    bool CheckFigureBottom(Figure* figure);
+    bool CheckFiguresCollison(Figure* figure);
 private:
     const char *title;
     int windowHeight, windowWidth;
@@ -54,10 +54,11 @@ private:
     SDL_Window *window;
     long score;
     GameState gameState;
-    std::vector<GameObject*> gameObjects;
+    std::vector<Figure*> gameObjects;
     std::vector<Figure*> figures;
     std::vector<Vector2*> blocks;
     Uint32 mTicksCount;
     int blockSize;
+    Figure* fallingFigure;
 
 };

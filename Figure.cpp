@@ -148,7 +148,7 @@ bool Figure::CheckConstraints() {
 
 void Figure::CheckFallen()
 {
-    if(CheckIsDown() || game->CheckFigureBottom(this))
+    if(CheckIsDown() || game->CheckFiguresCollison(this))
     {
         isActive = false;
         game->PutFigure(this);
@@ -160,7 +160,7 @@ bool Figure::CheckIsDown() {
     for (auto &block:blocks) {
         if (block.y >= game->GetFieldRect()->y + game->GetFieldRect()->h - game->GetBlockSize()) {
             block.y = game->GetFieldRect()->y + game->GetFieldRect()->h - game->GetBlockSize();
-
+            speed = 100;
             return true;
         }
 
@@ -176,45 +176,20 @@ void Figure::Rotate() {
         blocks[i].x = p.x - x;
         blocks[i].y = p.y + y;
     }
-    isRotating = false;
 }
 
-void Figure::ProcessInput(const Uint8 *state) {
-    if (state[SDL_SCANCODE_D] || state[SDL_SCANCODE_RIGHT]) {
-        dx = 1;
-    }
-    if (state[SDL_SCANCODE_A] || state[SDL_SCANCODE_LEFT]) {
-        dx = -1;
-    }
-    if (state[SDL_SCANCODE_W] || state[SDL_SCANCODE_UP]) {
-        isRotating = true; //TODO Optimise. Stop rendering before figure is rotated
-    }
-
+void Figure::MoveLeft() {
+    dx = -1;
 }
 
-float Figure::GetLeftX() {
-    float min = game->GetWindowWidth();
-    for (auto &block : blocks) {
-        if (block.x < min)
-            min = block.x;
-    }
-    return min;
+void Figure::MoveRight() {
+    dx = 1;
 }
 
-float Figure::GetRightX() {
-    float max = 0;
-    for (auto &block : blocks) {
-        if (block.x > max)
-            max = block.x;
-    }
-    return max;
+void Figure::StopMoving() {
+    dx = 0;
 }
 
-float Figure::GetBottomY() {
-    float max = 0;
-    for (auto &block : blocks) {
-        if (block.y > max)
-            max = block.y;
-    }
-    return max;
+void Figure::DropDown() {
+    speed = 500;
 }

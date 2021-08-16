@@ -14,11 +14,12 @@ public:
 
     virtual void Draw(SDL_Renderer *renderer) = 0;
 
-    virtual void ProcessInput(const Uint8 *state) = 0;
-
     class Game* GetGame();
 
     Transform transform;
+
+
+
 protected:
     class Game* game;
 };

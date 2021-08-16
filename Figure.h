@@ -22,18 +22,28 @@ class Figure : public GameObject {
 public:
     Figure();
 
-    Figure(Type type, Vector2 *pos, Game* game);
+    Figure(Type type, Vector2 *pos, Game *game);
 
     void Draw(SDL_Renderer *renderer) override;
 
     void Update(float deltaTime) override;
 
-    void ProcessInput(const Uint8 *state) override;
+    bool IsActive() { return isActive; };
 
-    bool IsActive() {return isActive;};
-    std::vector<Vector2> *GetBlocks() {return &blocks;};
+    void MoveLeft();
+
+    void MoveRight();
+
+    void DropDown();
+
+    void Rotate();
+    void StopMoving();
+    std::vector<Vector2> *GetBlocks() { return &blocks; };
+
     float GetLeftX();
+
     float GetRightX();
+
     float GetBottomY();
 
 private:
@@ -46,9 +56,10 @@ private:
 
     bool CheckConstraints();
 
-    void Rotate();
 
     bool CheckIsDown();
 
     void CheckFallen();
+
+
 };

@@ -9,6 +9,7 @@
 #include "Transform.h"
 #include "Draw.h"
 #include "Figure.h"
+
 #define BLOCK_SIZE 20
 
 void Game::Init() {
@@ -32,12 +33,13 @@ void Game::Init() {
 }
 
 Game::~Game() {
-    delete(fieldRect);
+    delete (fieldRect);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
+    delete (fallingFigure);
     if (!gameObjects.empty()) {
-        std::vector<GameObject *>().swap(gameObjects);
+        std::vector<Figure *>().swap(gameObjects);
     }
 }
 
@@ -79,6 +81,24 @@ void Game::ProcessInput() {
             case SDL_QUIT:
                 gameState = STATE_EXIT;
                 break;
+            case SDL_KEYDOWN:
+                switch (event.key.keysym.sym) {
+                    case SDLK_LEFT:
+                        fallingFigure->MoveLeft();
+                        break;
+                    case SDLK_RIGHT:
+                        fallingFigure->MoveRight();
+                        break;
+                    case SDLK_UP:
+                        fallingFigure->Rotate();
+                        break;
+                    case SDLK_DOWN:
+                        fallingFigure->DropDown();
+                        break;
+                    default:
+                        break;
+                }
+                break;
         }
     }
 
@@ -86,14 +106,11 @@ void Game::ProcessInput() {
     if (state[SDL_SCANCODE_ESCAPE]) {
         gameState = STATE_EXIT;
     }
-    for (auto gameObject : gameObjects) {
-        gameObject->ProcessInput(state);
-    }
 }
 
-void Game::DropNewFigure()
-{
+void Game::DropNewFigure() {
     gameObjects.emplace_back(new Figure(static_cast<Type>(rand() % last), new Vector2(150, 50), this));
+    fallingFigure = gameObjects.back();
     //gameObjects.emplace_back(new Figure(Type::TYPE_Z, new Vector2(150, 50), this));
 }
 
@@ -109,20 +126,18 @@ int Game::GetBlockSize() {
     return blockSize;
 }
 
-SDL_Rect* Game::GetFieldRect() {
+SDL_Rect *Game::GetFieldRect() {
     return fieldRect;
 }
 
-bool Game::CheckFigureBottom(Figure* figure)
-{
-    if(blocks.empty())
+bool Game::CheckFiguresCollison(Figure *figure) {
+    if (blocks.empty())
         return false;
-    for(auto figBlock:*figure->GetBlocks())
-    {
+    for (auto figBlock:*figure->GetBlocks()) {
         for (auto block:blocks) {
-            if(block->x != figBlock.x)
+            if (block->x != figBlock.x)
                 continue;
-            if(figBlock.y + blockSize >= block->y)
+            if (figBlock.y + blockSize >= block->y)
                 return true;
         }
     }
@@ -131,7 +146,7 @@ bool Game::CheckFigureBottom(Figure* figure)
 }
 
 void Game::PutFigure(Figure *figure) {
-    if(!figure)
+    if (!figure)
         return;
     figures.push_back(figure);
     for (auto &block: *figure->GetBlocks()) {
