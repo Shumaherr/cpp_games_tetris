@@ -109,8 +109,8 @@ void Game::ProcessInput() {
 }
 
 void Game::DropNewFigure() {
-    gameObjects.emplace_back(new Figure(static_cast<Type>(rand() % last), new Vector2(150, 50), this));
-    fallingFigure = gameObjects.back();
+    auto it = gameObjects.emplace_back({static_cast<Type>(rand() % last), new Vector2(150, 50), this});
+    fallingFigure = it;
     //gameObjects.emplace_back(new Figure(Type::TYPE_Z, new Vector2(150, 50), this));
 }
 
@@ -122,22 +122,22 @@ int Game::GetWindowWidth() {
     return windowWidth;
 }
 
-int Game::GetBlockSize() {
+int Game::GetBlockSize() const {
     return blockSize;
 }
 
-SDL_Rect *Game::GetFieldRect() {
-    return fieldRect;
+SDL_Rect& Game::GetFieldRect() {
+    return *fieldRect;
 }
 
-bool Game::CheckFiguresCollison(Figure *figure) {
+bool Game::CheckFiguresCollison(Figure& figure) const {
     if (blocks.empty())
         return false;
-    for (auto figBlock:*figure->GetBlocks()) {
-        for (auto block:blocks) {
-            if (block->x != figBlock.x)
+    for (const auto &figBlock:figure.GetBlocks()) {
+        for (const auto &block:blocks) {
+            if (block.x != figBlock.x)
                 continue;
-            if (figBlock.y + blockSize >= block->y)
+            if (figBlock.y + blockSize >= block.y)
                 return true;
         }
     }
@@ -149,8 +149,8 @@ void Game::PutFigure(Figure *figure) {
     if (!figure)
         return;
     figures.push_back(figure);
-    for (auto &block: *figure->GetBlocks()) {
-        blocks.push_back(&block);
+    for (auto &block: figure->GetBlocks()) {
+        blocks.push_back(block);
     }
 }
 

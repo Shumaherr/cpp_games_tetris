@@ -13,7 +13,7 @@
 class Draw: public Component {
 public:
     Draw();
-    void DrawObject(SDL_Renderer* render) override ;
+    void DrawObject(SDL_Renderer* render) ;
 
 private:
     SDL_Color *color;

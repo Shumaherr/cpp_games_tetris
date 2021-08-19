@@ -3,12 +3,12 @@
 //
 #pragma once
 
+#include <vector>
 #include "GameObject.h"
 #include "Transform.h"
-#include "Game.h"
 
 enum Type {
-    TYPE_I,
+    TYPE_I = 0,
     TYPE_J,
     TYPE_L,
     TYPE_O,
@@ -17,12 +17,13 @@ enum Type {
     TYPE_Z,
     last
 };
-
+class GameObject;
+class Game;
 class Figure : public GameObject {
 public:
     Figure();
 
-    Figure(Type type, Vector2 *pos, Game *game);
+    Figure(Type type, Vector2& pos, const Game& game);
 
     void Draw(SDL_Renderer *renderer) override;
 
@@ -38,7 +39,7 @@ public:
 
     void Rotate();
     void StopMoving();
-    std::vector<Vector2> *GetBlocks() { return &blocks; };
+    std::vector<Vector2> &GetBlocks() { return blocks; };
 
     float GetLeftX();
 
@@ -59,7 +60,7 @@ private:
 
     bool CheckIsDown();
 
-    void CheckFallen();
+    bool CheckFallen();
 
 
 };

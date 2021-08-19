@@ -3,10 +3,9 @@
 //
 #pragma once
 
-#include <SDL2-2.0.12/include/SDL_render.h>
+#include <SDL_render.h>
 
 class Component {
 public:
-    virtual void Update(float deltaTime);
-    virtual void DrawObject(SDL_Renderer* render);
+    virtual void Update(float deltaTime) = 0;
 };

@@ -14,8 +14,5 @@ void GameObject::Draw(SDL_Renderer *renderer) {
 
 }
 
-Game* GameObject::GetGame() {
-    return game;
-}
 
 

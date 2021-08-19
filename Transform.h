@@ -19,9 +19,9 @@ public:
 
     Transform(int x, int y, int height, int width, float rotation, float scale);
 
-    void setPosition(Vector2 *newPos);
+    void setPosition(Vector2& newPos);
 
-    Vector2 *getPosition();
+    Vector2& getPosition();
 
     void setRotation(float newRotation);
 
@@ -29,7 +29,7 @@ public:
 
     void setScale(float newScale);
 
-    float getScale();
+    float getScale() const;
 
     void Update(float deltaTime) override;
 

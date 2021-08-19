@@ -20,12 +20,13 @@ Transform::Transform(int x, int y, int height, int width, float rotation, float 
     scale = scale;
 }
 
-void Transform::setPosition(Vector2 *newPos) {
-    position = *newPos;
+//TODO refactor
+void Transform::setPosition(Vector2& newPos) {
+    position = newPos;
 }
 
-Vector2 *Transform::getPosition() {
-    return &position;
+Vector2& Transform::getPosition() {
+    return position;
 }
 
 void Transform::setRotation(float newRotation) {
@@ -40,7 +41,7 @@ void Transform::setScale(float newScale) {
     scale = newScale;
 }
 
-float Transform::getScale() {
+float Transform::getScale() const {
     return scale;
 }
 
