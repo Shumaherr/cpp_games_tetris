@@ -8,6 +8,7 @@
 #include <vector>
 #include <map>
 #include "Transform.h"
+#include "Figure.h"
 
 enum GameState {
     STATE_INIT,
@@ -43,8 +44,8 @@ public:
     SDL_Rect& GetFieldRect();
     int GetBlockSize() const;
     void DropNewFigure();
-    void PutFigure(Figure* figure);
-    bool CheckFiguresCollison(Figure& figure);
+    void PutFigure(Figure& figure);
+    bool CheckFiguresCollison(Figure& figure) const;
 private:
     const char *title;
     int windowHeight, windowWidth;
@@ -53,11 +54,13 @@ private:
     SDL_Window *window;
     long score;
     GameState gameState;
-    std::vector<Figure*> gameObjects;
-    std::vector<Figure*> figures;
+    std::vector<Figure> gameObjects;
+    std::vector<Figure> figures;
     std::vector<Vector2> blocks;
     Uint32 mTicksCount;
     int blockSize;
     Figure* fallingFigure;
+
+    Type randFigure() const;
 
 };

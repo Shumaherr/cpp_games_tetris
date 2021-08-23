@@ -5,12 +5,16 @@
 #include <SDL.h>
 #include <memory>
 #include <iostream>
+#include <random>
 #include "Game.h"
 #include "Transform.h"
 #include "Draw.h"
 #include "Figure.h"
 
 #define BLOCK_SIZE 20
+
+static std::random_device rd;
+static std::mt19937 gen(rd());
 
 void Game::Init() {
     blockSize = BLOCK_SIZE;
@@ -39,7 +43,7 @@ Game::~Game() {
     SDL_Quit();
     delete (fallingFigure);
     if (!gameObjects.empty()) {
-        std::vector<Figure *>().swap(gameObjects);
+        std::vector<Figure>().swap(gameObjects);
     }
 }
 
@@ -56,7 +60,7 @@ void Game::Update() {
     }
     mTicksCount = SDL_GetTicks();
     for (auto gameObject : gameObjects) {
-        gameObject->Update(deltaTime);
+        gameObject.Update(deltaTime);
     }
 }
 
@@ -69,7 +73,7 @@ void Game::Render() {
     SDL_RenderDrawRects(renderer, rects[0], rects.size());
     SDL_RenderFillRects(renderer, rects[0], rects.size());
     for (auto gameObject : gameObjects) {
-        gameObject->Draw(renderer);
+        gameObject.Draw(renderer);
     }
     SDL_RenderPresent(renderer);
 }
@@ -109,8 +113,8 @@ void Game::ProcessInput() {
 }
 
 void Game::DropNewFigure() {
-    auto it = gameObjects.emplace_back({static_cast<Type>(rand() % last), new Vector2(150, 50), this});
-    fallingFigure = it;
+    auto it = gameObjects.emplace_back(Figure(randFigure(), *new Vector2(150, 50), this));
+    fallingFigure = &it;
     //gameObjects.emplace_back(new Figure(Type::TYPE_Z, new Vector2(150, 50), this));
 }
 
@@ -145,13 +149,17 @@ bool Game::CheckFiguresCollison(Figure& figure) const {
 
 }
 
-void Game::PutFigure(Figure *figure) {
-    if (!figure)
-        return;
+void Game::PutFigure(Figure& figure) {
     figures.push_back(figure);
-    for (auto &block: figure->GetBlocks()) {
+    for (auto &block: figure.GetBlocks()) {
         blocks.push_back(block);
     }
+}
+
+Type Game::randFigure() const {
+    std::uniform_int_distribution<size_t> dis(0, FIGURE_TYPES.size() - 1);
+    Type randomDirection = FIGURE_TYPES[dis(gen)];
+    return randomDirection;
 }
 
 

@@ -17,7 +17,5 @@ public:
 
     Transform transform;
 
-protected:
-    Game& game;
 };
 

@@ -6,24 +6,25 @@
 #include <vector>
 #include "GameObject.h"
 #include "Transform.h"
+#include "Game.h"
 
-enum Type {
+typedef enum {
     TYPE_I = 0,
     TYPE_J,
     TYPE_L,
     TYPE_O,
     TYPE_S,
     TYPE_T,
-    TYPE_Z,
-    last
-};
+    TYPE_Z
+} Type;
+
+static std::vector<Type> FIGURE_TYPES ({Type::TYPE_I,Type::TYPE_J, Type::TYPE_L, Type::TYPE_O, Type::TYPE_S, Type::TYPE_T, Type::TYPE_Z});
 class GameObject;
 class Game;
 class Figure : public GameObject {
 public:
-    Figure();
 
-    Figure(Type type, Vector2& pos, const Game& game);
+    Figure(Type type, Vector2& pos, Game* game);
 
     void Draw(SDL_Renderer *renderer) override;
 
@@ -54,7 +55,7 @@ private:
     bool isRotating;
     std::vector<Vector2> blocks;
     bool isActive;
-
+    Game* game;
     bool CheckConstraints();
 
 
