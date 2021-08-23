@@ -8,7 +8,7 @@
 #include "Transform.h"
 #include "Game.h"
 
-typedef enum {
+enum Type{
     TYPE_I = 0,
     TYPE_J,
     TYPE_L,
@@ -16,7 +16,7 @@ typedef enum {
     TYPE_S,
     TYPE_T,
     TYPE_Z
-} Type;
+};
 
 static std::vector<Type> FIGURE_TYPES ({Type::TYPE_I,Type::TYPE_J, Type::TYPE_L, Type::TYPE_O, Type::TYPE_S, Type::TYPE_T, Type::TYPE_Z});
 class GameObject;
