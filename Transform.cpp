@@ -11,7 +11,7 @@ Transform::Transform() {
     scale = 1.0;
 }
 
-Transform::Transform(int x, int y, int height, int width, float rotation, float scale) {
+Transform::Transform(float x, float y, int height, int width, float rotation, float scale) {
     position.x = x;
     position.y = y;
     this->height = height;

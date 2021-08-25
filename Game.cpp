@@ -13,9 +13,6 @@
 
 #define BLOCK_SIZE 20
 
-static std::random_device rd;
-static std::mt19937 gen(rd());
-
 void Game::Init() {
     blockSize = BLOCK_SIZE;
     gameState = STATE_INIT;
@@ -113,7 +110,7 @@ void Game::ProcessInput() {
 }
 
 void Game::DropNewFigure() {
-    auto it = gameObjects.emplace_back(Figure(randFigure(), *new Vector2(150, 50), this));
+    auto it = gameObjects.emplace_back(Figure(Figure::randFigure(), *new Vector2(150, 50), this));
     fallingFigure = &it;
     //gameObjects.emplace_back(new Figure(Type::TYPE_Z, new Vector2(150, 50), this));
 }
@@ -154,12 +151,6 @@ void Game::PutFigure(Figure& figure) {
     for (auto &block: figure.GetBlocks()) {
         blocks.push_back(block);
     }
-}
-
-Type Game::randFigure() const {
-    std::uniform_int_distribution<size_t> dis(0, FIGURE_TYPES.size() - 1);
-    Type randomDirection = FIGURE_TYPES[dis(gen)];
-    return randomDirection;
 }
 
 

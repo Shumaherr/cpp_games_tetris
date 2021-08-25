@@ -20,7 +20,6 @@ enum GameState {
 };
 class GameObject;
 class Figure;
-enum Type;
 class Game {
 public:
     Game() : windowHeight(800), windowWidth(600), title("Tetris") {};
@@ -61,7 +60,5 @@ private:
     Uint32 mTicksCount;
     int blockSize;
     Figure* fallingFigure;
-
-    Type randFigure() const;
 
 };

@@ -2,8 +2,12 @@
 // Created by Aleksandr on 22.02.2021.
 //
 
+#include <random>
 #include "Figure.h"
 #include "Draw.h"
+
+static std::random_device rd;
+static std::mt19937 gen(rd());
 
 void Figure::Draw(SDL_Renderer *renderer) {
     switch (type) {
@@ -126,11 +130,11 @@ void Figure::Update(float deltaTime) {
 
     Vector2& newPos = this->transform.getPosition();
     //Check is figure fallen down
-    float oldX[4];
+    int oldX[4];
     Vector2 oldPos[4];
     for (int i = 0; i < 4; i++) {
-        blocks[i].y += speed * deltaTime;
         oldPos[i] = blocks[i];
+        blocks[i].y += speed * deltaTime;
         if (dx != 0)
             blocks[i].x += game->GetBlockSize() * dx;
     }
@@ -138,7 +142,6 @@ void Figure::Update(float deltaTime) {
         for (int i = 0; i < 4; i++) {
             blocks[i].x = oldPos[i].x;
         }
-
     dx = 0;
 }
 //using size_type = uint16_t;
@@ -199,4 +202,10 @@ void Figure::StopMoving() {
 
 void Figure::DropDown() {
     speed = 500;
+}
+
+Type Figure::randFigure() {
+    std::uniform_int_distribution<size_t> dis(0, FIGURE_TYPES.size() - 1);
+    Type randomDirection = FIGURE_TYPES[dis(gen)];
+    return randomDirection;
 }

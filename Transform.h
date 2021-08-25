@@ -6,18 +6,18 @@
 #include "Component.h"
 
 struct Vector2 {
-    int x, y;
+    float x, y;
 public:
     Vector2() : x(0), y(0) {};
 
-    Vector2(int x, int y) : x(x), y(y) {};
+    Vector2(float x, float y) : x(x), y(y) {};
 };
 
 class Transform : public Component {
 public:
     Transform();
 
-    Transform(int x, int y, int height, int width, float rotation, float scale);
+    Transform(float x, float y, int height, int width, float rotation, float scale);
 
     void setPosition(Vector2& newPos);
 

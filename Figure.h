@@ -47,7 +47,7 @@ public:
     float GetRightX();
 
     float GetBottomY();
-
+    static Type randFigure();
 private:
     Type type;
     float speed;
