@@ -128,9 +128,7 @@ void Figure::Update(float deltaTime) {
     }
 
 
-    Vector2& newPos = this->transform.getPosition();
     //Check is figure fallen down
-    int oldX[4];
     Vector2 oldPos[4];
     for (int i = 0; i < 4; i++) {
         oldPos[i] = blocks[i];
@@ -140,7 +138,7 @@ void Figure::Update(float deltaTime) {
     }
     if (!CheckConstraints())
         for (int i = 0; i < 4; i++) {
-            blocks[i].x = oldPos[i].x;
+            blocks[i] = oldPos[i];
         }
     dx = 0;
 }
