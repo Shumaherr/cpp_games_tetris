@@ -56,7 +56,7 @@ void Game::Update() {
         deltaTime = 0.05f;
     }
     mTicksCount = SDL_GetTicks();
-    for (auto gameObject : gameObjects) {
+    for (auto &gameObject : gameObjects) {
         gameObject.Update(deltaTime);
     }
 }
@@ -69,7 +69,7 @@ void Game::Render() {
     SDL_SetRenderDrawColor(renderer, 200, 200, 200, 255);
     SDL_RenderDrawRects(renderer, rects[0], rects.size());
     SDL_RenderFillRects(renderer, rects[0], rects.size());
-    for (auto gameObject : gameObjects) {
+    for (auto &gameObject : gameObjects) {
         gameObject.Draw(renderer);
     }
     SDL_RenderPresent(renderer);
@@ -110,8 +110,8 @@ void Game::ProcessInput() {
 }
 
 void Game::DropNewFigure() {
-    auto it = gameObjects.emplace_back(Figure(Figure::randFigure(), *new Vector2(150, 50), this));
-    fallingFigure = &it;
+    gameObjects.emplace_back(Figure(Figure::randFigure(), *new Vector2(150, 50), this));
+    fallingFigure = &gameObjects.back();
     //gameObjects.emplace_back(new Figure(Type::TYPE_Z, new Vector2(150, 50), this));
 }
 
